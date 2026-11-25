@@ -1,8 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteHeader, SiteFooter, SectionTitle } from "@/components/site/Layout";
 import {
-  ArrowRight, Briefcase, GraduationCap, MapPin, Clock, Menu, X, UserPlus, Search,
-  Handshake, Rocket, Users, Globe2, Quote, Mail, Linkedin, Twitter, Facebook,
+  ArrowRight, Briefcase, GraduationCap, MapPin, Clock, UserPlus, Search,
+  Handshake, Rocket, Users, Quote,
 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import mentorImg from "@/assets/mentor.jpg";
@@ -56,37 +56,9 @@ const testimonials = [
 ];
 
 function Index() {
-  const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen bg-background font-sans text-foreground">
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-accent-foreground">Skip to content</a>
-
-      <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href="/" className="flex items-center gap-2" aria-label="RefugeeConnect home">
-            <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-primary-foreground"><Globe2 className="h-5 w-5" /></span>
-            <span className="text-lg font-bold tracking-tight text-primary">Refugee<span className="text-accent">Connect</span></span>
-          </a>
-          <nav aria-label="Main" className="hidden lg:block">
-            <ul className="flex items-center gap-7 text-sm font-medium">
-              {nav.map((n, i) => (
-                <li key={n}><a href="#" className={i === 0 ? "text-accent" : "text-muted-foreground transition-colors hover:text-primary"}>{n}</a></li>
-              ))}
-            </ul>
-          </nav>
-          <a href="#" className="hidden rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition hover:opacity-90 lg:inline-flex">Get Started</a>
-          <button className="rounded-md p-2 text-primary lg:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
-            {open ? <X /> : <Menu />}
-          </button>
-        </div>
-        {open && (
-          <nav aria-label="Mobile" className="border-t border-border lg:hidden">
-            <ul className="space-y-1 px-4 py-3">
-              {nav.map((n) => <li key={n}><a href="#" className="block rounded-md px-3 py-2 font-medium hover:bg-muted">{n}</a></li>)}
-            </ul>
-          </nav>
-        )}
-      </header>
+      <SiteHeader />
 
       <main id="main">
         {/* Hero */}
@@ -97,8 +69,8 @@ function Index() {
               <h1 className="font-display text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">Your Skills Deserve an Opportunity.</h1>
               <p className="mt-6 max-w-xl text-lg text-primary-foreground/80">RefugeeConnect links skilled refugees with professional mentors, employers, internships, fellowships and networks — so talent can thrive wherever life leads.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="#opportunities" className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-accent-foreground transition hover:opacity-90">Explore Opportunities <ArrowRight className="h-4 w-4" /></a>
-                <a href="#community" className="inline-flex items-center justify-center rounded-lg border border-primary-foreground/30 px-6 py-3.5 font-semibold transition hover:bg-primary-foreground/10">Join Our Community</a>
+                <Link to="/opportunities" className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-accent-foreground transition hover:opacity-90">Explore Opportunities <ArrowRight className="h-4 w-4" /></Link>
+                <Link to="/community" className="inline-flex items-center justify-center rounded-lg border border-primary-foreground/30 px-6 py-3.5 font-semibold transition hover:bg-primary-foreground/10">Join Our Community</Link>
               </div>
             </div>
             <div className="relative">
@@ -131,7 +103,7 @@ function Index() {
         <section id="opportunities" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <SectionTitle eyebrow="Featured" title="Internships & Fellowships" />
-            <a href="#" className="inline-flex items-center gap-1 font-semibold text-accent hover:underline">View all opportunities <ArrowRight className="h-4 w-4" /></a>
+            <Link to="/opportunities" className="inline-flex items-center gap-1 font-semibold text-accent hover:underline">View all opportunities <ArrowRight className="h-4 w-4" /></Link>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {opportunities.map((o) => (
@@ -146,7 +118,7 @@ function Index() {
                   <p className="flex items-center gap-2"><MapPin className="h-4 w-4" />{o.loc}</p>
                   <p className="flex items-center gap-2"><Clock className="h-4 w-4" />{o.dur}</p>
                 </div>
-                <a href="#" className="mt-6 inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition group-hover:bg-accent group-hover:text-accent-foreground">Learn more <ArrowRight className="h-4 w-4" /></a>
+                <Link to="/opportunities" className="mt-6 inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition group-hover:bg-accent group-hover:text-accent-foreground">Learn more <ArrowRight className="h-4 w-4" /></Link>
               </article>
             ))}
           </div>
@@ -155,7 +127,7 @@ function Index() {
         {/* How it works */}
         <section className="bg-muted">
           <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-            <div className="text-center"><SectionTitle eyebrow="Simple process" title="How It Works" center /></div>
+            <SectionTitle eyebrow="Simple process" title="How It Works" center />
             <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {steps.map((s, i) => (
                 <li key={s.title} className="relative rounded-2xl bg-card p-6 shadow-card">
@@ -181,8 +153,8 @@ function Index() {
               ))}
             </ul>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#" className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground hover:opacity-90">Find a Mentor <ArrowRight className="h-4 w-4" /></a>
-              <a href="#" className="inline-flex items-center justify-center rounded-lg border border-border px-6 py-3 font-semibold text-primary hover:bg-muted">Become a Mentor</a>
+              <Link to="/mentors" className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground hover:opacity-90">Find a Mentor <ArrowRight className="h-4 w-4" /></Link>
+              <Link to="/mentors" className="inline-flex items-center justify-center rounded-lg border border-border px-6 py-3 font-semibold text-primary hover:bg-muted">Become a Mentor</Link>
             </div>
           </div>
         </section>
@@ -227,44 +199,12 @@ function Index() {
           <div className="mt-16 rounded-2xl bg-hero p-10 text-center text-primary-foreground">
             <h2 className="font-display text-3xl font-semibold">Ready to take the next step?</h2>
             <p className="mx-auto mt-3 max-w-xl text-primary-foreground/80">Join thousands of professionals, mentors and employers building a more inclusive workforce.</p>
-            <a href="#" className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-accent-foreground hover:opacity-90">Join Our Community <ArrowRight className="h-4 w-4" /></a>
+            <Link to="/community" className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-semibold text-accent-foreground hover:opacity-90">Join Our Community <ArrowRight className="h-4 w-4" /></Link>
           </div>
         </section>
       </main>
 
-      <footer className="bg-navy-deep text-primary-foreground/80">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
-          <div>
-            <p className="text-lg font-bold text-primary-foreground">Refugee<span className="text-accent">Connect</span></p>
-            <p className="mt-3 text-sm">Connecting Talent. Creating Opportunities.</p>
-            <div className="mt-5 flex gap-3">
-              {[Linkedin, Twitter, Facebook, Mail].map((I, i) => (
-                <a key={i} href="#" aria-label="Social link" className="grid h-9 w-9 place-items-center rounded-full bg-primary-foreground/10 hover:bg-accent"><I className="h-4 w-4" /></a>
-              ))}
-            </div>
-          </div>
-          {[
-            ["Platform", ["Opportunities", "Find a Mentor", "Community", "For Employers"]],
-            ["Organisation", ["About", "Our Impact", "Partners", "Contact"]],
-            ["Support", ["Help Centre", "Privacy Policy", "Terms of Use", "Accessibility"]],
-          ].map(([h, links]) => (
-            <div key={h as string}>
-              <h3 className="font-semibold text-primary-foreground">{h as string}</h3>
-              <ul className="mt-4 space-y-2 text-sm">{(links as string[]).map((l) => <li key={l}><a href="#" className="hover:text-accent">{l}</a></li>)}</ul>
-            </div>
-          ))}
-        </div>
-        <div className="border-t border-primary-foreground/10 py-6 text-center text-xs">© 2026 RefugeeConnect. Supporting SDG 8, 10 & 17.</div>
-      </footer>
-    </div>
-  );
-}
-
-function SectionTitle({ eyebrow, title, center }: { eyebrow: string; title: string; center?: boolean }) {
-  return (
-    <div className={center ? "mx-auto max-w-2xl" : ""}>
-      <p className="text-sm font-semibold uppercase tracking-widest text-accent">{eyebrow}</p>
-      <h2 className="mt-3 font-display text-3xl font-semibold text-primary sm:text-4xl">{title}</h2>
+      <SiteFooter />
     </div>
   );
 }
