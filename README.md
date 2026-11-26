@@ -1,78 +1,50 @@
-# Skill Bridges Community
+# RefugeeConnect
 
-Build a modern, professional and responsive website called RefugeeConnect.
+### Connecting Talent. Creating Opportunities.
 
-Tagline: Connecting Talent. Creating Opportunities.
+**Live Website:** https://skill-bridges-community.lovable.app/
+
+**GitHub Repository:** https://github.com/abdullahi48a/skill-bridges-community
+
+## About the Project
 
 RefugeeConnect is a digital platform designed to connect skilled refugees with professional mentors, employers, internships, fellowships and networking opportunities.
 
-The platform supports:
+The project aims to improve access to professional opportunities, encourage inclusion and support career development.
 
-SDG 8: Decent Work and Economic Growth.
+## Key Features
 
-SDG 10: Reduced Inequalities.
+- **Home:** Introduction to the RefugeeConnect platform.
+- **About:** Information about the project's mission and vision.
+- **Opportunities:** Example internships and fellowship opportunities.
+- **Find a Mentor:** A section introducing professional mentorship.
+- **Community:** A professional networking and resource-sharing space.
+- **Contact:** A contact page with a demonstration form.
 
-SDG 17: Partnerships for the Goals.
+## Sustainable Development Goals (SDGs)
 
-DESIGN:
+This project supports the following United Nations Sustainable Development Goals:
 
-Professional navy blue, teal, white and light grey colour palette.
+- **SDG 8:** Decent Work and Economic Growth.
+- **SDG 10:** Reduced Inequalities.
+- **SDG 17:** Partnerships for the Goals.
 
-Modern typography.
+## Technologies and Tools
 
-Clean layouts and professional cards.
+- Lovable – AI-assisted website development.
+- GitHub – Source code management and version control.
+- Responsive web design – Desktop, tablet and mobile support.
 
-High-quality images representing diverse professionals.
+## Project Status
 
-Responsive design for desktop, tablet and mobile.
+The website is published and connected to GitHub.
 
-HOMEPAGE:
+**Note:** This is a front-end demonstration project. Some content, statistics, testimonials and opportunities are illustrative examples. Backend and database functionality have not yet been implemented.
 
-Navigation bar with RefugeeConnect logo, Home, About, Opportunities, Find a Mentor, Community and Contact.
+## Developer
 
-Hero section with heading: "Your Skills Deserve an Opportunity."
+**Abdullahi Mohamed**
 
-Supporting text explaining the purpose of RefugeeConnect.
+## Live Demo
 
-Two buttons: Explore Opportunities and Join Our Community.
-
-Impact statistics using demonstration data.
-
-Featured internship and fellowship opportunities.
-
-How It Works section.
-
-Mentorship section.
-
-SDG 8, SDG 10 and SDG 17 section.
-
-Testimonials clearly labelled as fictional demonstrations.
-
-Professional footer.
-
-Make the website visually attractive, accessible, user-friendly and fully responsive.
-
-For this first stage, focus on building the homepage only. Do not build the backend or database yet.
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://skill-bridges-community.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/4c1178f7-8719-4c24-8d4a-b5cea9c5ec69).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+Visit the website: https://skill-bridges-community.lovable.app/
